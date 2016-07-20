@@ -26,7 +26,8 @@
 <style>
 .MapCard-card-wide.mdl-card {
   width: 85%;
-  margin: auto;
+  margin: 25px;
+  margin-left: 35px;
   margin-top: 35px;
 }
 </style>
@@ -35,7 +36,9 @@
 .MapButtons-card-wide.mdl-card {
   width: 500px;
   margin: 25px;
-  float: left; 
+  margin-left: 35px;
+  float: left;
+  padding-top: 10px;
 }
 </style>
 
@@ -43,6 +46,7 @@
 .MapToggles-card-wide.mdl-card {
     width: 530px;
     margin: 25px;
+    margin-left: 35px;
     float: left;
     padding-right: 50px;
     padding-top: 10px;
@@ -206,12 +210,12 @@ function toggleLayer(this_layer){
      else 
          {layer_2000.setMap(null);}
 
-     if(document.getElementById('CheckCasher').checked)
+     if(document.getElementById('Short-TermLenders').checked)
          {layer_2001.setMap(map);}    
      else 
          {layer_2001.setMap(null);}
      
-     if(document.getElementById('SmallLoans').checked)
+     if(document.getElementById('CreditUnions').checked)
          {layer_2002.setMap(map);}
      else
          {layer_2002.setMap(null);}
@@ -377,11 +381,11 @@ styles: [
     styleId: 4,
     templateId: 5
   });
-   // Note - This is the Percent Below Pov and Under 18 Layer
+   // Note - This is the LMI percent layer
       layer_2 = new google.maps.FusionTablesLayer({
         query: {
-          select: "col10",
-          from: "1XIgYa0wIq2xmTCKpxGIebXTOMOIvptbQKwq2G86a"
+          select: "col26",
+          from: "1oAMVkVMcC5F94kGd2emLax38G3djQKtXLmXBV-gi"
         },
         styleId: 2,
         templateId: 2
@@ -395,11 +399,11 @@ styles: [
         styleId: 2,
         templateId: 2
       });
-   // Note - This is the Land Bank D and F grade Layer
+   // Note - This is the 50% or more African-American Layer
        layer_4 = new google.maps.FusionTablesLayer({
         query: {
-          select: "col5",
-          from: "1YUD-hLuibLpuQM35X2utMgbW-Nm5Q1g61RUXPzkW"
+          select: "col25",
+          from: "1N1ii_U46qY731uvFcEtUQIkvfNxJy7zvR6aoLg_m"
         },
         styleId: 2,
         templateId: 2
@@ -444,11 +448,11 @@ styles: [
     templateId: 2
   });    
 
-    //Note - This is the Percent African American Layer
+    //Note - This is the Toledo Municipal Boundary Line
   layer_11 = new google.maps.FusionTablesLayer({
     query: {
-      select: "col21",
-      from: "1e8r5ammd1LYcZqK3xPP81lbeHB6vE9KSQSidO791"
+      select: "col18",
+      from: "1SXVfEuORrIW0ro10ur24c6nGYm0zCvbHoqE_4dQ6"
     },
     styleId: 2,
     templateId: 2
@@ -525,21 +529,21 @@ styles: [
         templateId: 2
       });
 
-    //Note - This is the Check Casher Layer
+    //Note - This is the ALL Pay Day and Short-Term Lenders layer
        layer_2001 = new google.maps.FusionTablesLayer({
         query: {
-          select: "col16",
-          from: "1Z_ksZ5NtRfxiVtfKQ-c1bqeBQwmto6aqq2yWqk2F"
+          select: "col22",
+          from: "10VbtkGalD9agsuSjnEujlE0F-Ng7EjyPnlyx8CXH"
         },
         styleId: 2,
         templateId: 2
       });
     
-    //Note - This is the Small Loans Layer
+    //Note - This is the Credit Unions Layer
        layer_2002 = new google.maps.FusionTablesLayer({
         query: {
-          select: "col17",
-          from: "1-MPyJNZ-iybF6uYBl01ilu59CSpvtbIfhI7vb_Ob"
+          select: "col19",
+          from: "1feC2_LT-NdW8V7RR8oeFi6SIE01SMxeEmaZh6OGv"
         },
         styleId: 2,
         templateId: 2
@@ -646,64 +650,28 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </style>
 
 </head>
+<body>
+<br>
 
-<!-- Add to Any -->
-<div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_default_style" style="bottom:0px; right:0px;" data-a2a-url="http://PROVIDE" data-a2a-title="Lucas County PayDay Lenders">
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_dd a2a_counter" href="https://www.addtoany.com/share"></a>
-</div>
-
-<script async src="//static.addtoany.com/menu/page.js"></script>
-
-<!-- Simple header with scrollable tabs. -->
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-  <header class="mdl-layout__header mdl-layout__header--scroll">
-    <div class="mdl-layout__header-row">
-      <!-- Title -->
-      <div align="center"><span class="mdl-layout-title">Access to Lenders in Lucas County</span>
-</div>
-    </div>
-    <!-- Tabs -->
-    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-      <a href="#scroll-tab-1" class="mdl-layout__tab is-active">Map of Lenders</a>
-      <a href="#scroll-tab-2" class="mdl-layout__tab">Access</a>
-      <a href="#scroll-tab-3" class="mdl-layout__tab">Reform</a>      
-      <a href="#scroll-tab-4" class="mdl-layout__tab">Media</a>
-      <a href="#scroll-tab-5" class="mdl-layout__tab">About</a>
-    </div>
-  </header>
-
-  <main class="mdl-layout__content">
-    <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
-      <div class="page-content">
-          
-<!--first page content-->
-
-<h5 align="center">Lenders in Lucas County</h5>
+<h2 align="center">Payday lending in Lucas County, Ohio</h2>
+<h5 align="center">Use the map below to see payday and other short-term lenders as well as bank branches in Lucas County, Ohio.<br>Add demographic and lender layers to the map. Click on the layers for more info.<br><br>[Return to the full report.]</h5>
 
 <div class="MapButtons-card-wide mdl-card mdl-shadow--2dp">
-  
-  
+    
+  <div style="text-align: center"><b>Demographic Map Layers</b></div>
         <ul style="list-style-type:none">
 
-<!--This is the Below Pov and Under 18 Checkbox-->
-          <li><label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="show_hide_layer_2"><input type="radio" class="mdl-radio__button" name="DemographicInfo" id="show_hide_layer_2" onclick="toggleLayer(layer_2)"/>Percent Below Poverty and Under 18 (five percent or more)</label></li>
-          
-<!-- This is the Median Year Structure Built Check Box-->
-          <li><label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="show_hide_layer_10"><input type="radio" class="mdl-radio__button" name="DemographicInfo" id="show_hide_layer_10" onclick="toggleLayer(layer_10)"/>Age of Housing - Median Year Structure Built</label></li>
+<!--This is the LMI percent checkbox-->
+          <li><label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="show_hide_layer_2"><input type="radio" class="mdl-radio__button" name="DemographicInfo" id="show_hide_layer_2" onclick="toggleLayer(layer_2)"/>Percent Percent Low to Moderate Income (LMI) families. Darker shades indeicate a larger percent of LMI families</label></li>  
 
-<!-- This is the Percent Renter-->
-          <li><label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="show_hide_layer_12"><input type="radio" class="mdl-radio__button" name="DemographicInfo" id="show_hide_layer_12" onclick="toggleLayer(layer_12)"/>Percent Renter-Occupied (five percent or more)</label></li>
+<!--This is the 50% or more African-American Layer--> 
+      <li><label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="show_hide_layer_4"><input type="radio" class="mdl-radio__button" name="DemographicInfo" id="show_hide_layer_4" onclick="toggleLayer(layer_4)"/>Census tracts with 50% or more African-American popluation</label></li>
 
-<!--This is the Code Enforcement Work Orders-->
-      <li><label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="show_hide_layer_6"><input type="radio" class="mdl-radio__button" name="DemographicInfo" id="show_hide_layer_6" onclick="toggleLayer(layer_6)"/>Total City of Toledo Code Enforcement Work Orders from June, 2015, to October, 2015</label></li>    
-
-<!--This is the Land Bank D&F Layer--> 
-      <li><label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="show_hide_layer_4"><input type="radio" class="mdl-radio__button" name="DemographicInfo" id="show_hide_layer_4" onclick="toggleLayer(layer_4)"/>Land Bank, Toledo Survey, D and F Grade </label></li>
-      
-      <li><label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="show_hide_layer_11"><input type="radio" class="mdl-radio__button" name="DemographicInfo" id="show_hide_layer_11" onclick="toggleLayer(layer_11)"/>Percent African American (five percent or more)</label></li>
+<!--This is the Opportunity Zone Layer--> 
+      <li><label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="show_hide_layer_1"><input type="radio" class="mdl-radio__button" name="DemographicInfo" id="show_hide_layer_1" onclick="toggleLayer(layer_1)"/>The Kirwan Institute's Opportunity Zones <a href="http://kirwaninstitute.osu.edu/researchandstrategicinitiatives/opportunity-communities/mapping/" target="_blank">(More information)</a></label></li>
+            
+<!--This is the Toledo Municipal Boundaries Layer-->
+      <li><label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="show_hide_layer_11"><input type="radio" class="mdl-radio__button" name="DemographicInfo" id="show_hide_layer_11" onclick="toggleLayer(layer_11)"/>City of Toledo municipal boundary line</label></li>
       
       </ul>
       
@@ -729,40 +697,25 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <!--Unique Banking Data-->
 <div class="MapToggles-card-wide mdl-card mdl-shadow--2dp">
 
-    <div style="text-align: center"><b>Lenders</b><br>Display up to five layers at once</div>
+    <div style="text-align: center"><b>Lenders</b></div>
 <ul style="list-style-type:none">
     
+<li><label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="Short-TermLenders">
+  <input type="checkbox" id="Short-TermLenders" class="mdl-switch__input" onclick="bankData()"><span class="mdl-switch__label">
+    Payday and other short-term lenders (Check Cashers, Small loan, and Auto-title Lenders) as of March, 2016</span>
+    </label></li><br><br>
+
 <li><label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="Banks">
   <input type="checkbox" id="Banks" class="mdl-switch__input" onclick="bankData()"><span class="mdl-switch__label">
-  Standard bank branch insured by FDIC, as of June, 2015
-    </span></label></li>
+  Standard bank branch locations as of June, 2015
+    </span></label></li><br>
+            
+<li><label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="CreditUnions">
+  <input type="checkbox" id="CreditUnions" class="mdl-switch__input" onclick="bankData()">
+    <span class="mdl-switch__label">Credit union branch locations as of February, 2016</span>
+    </label></li><br>
             
 
-<li><label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="CheckCasher">
-  <input type="checkbox" id="CheckCasher" class="mdl-switch__input" onclick="bankData()"><span class="mdl-switch__label">
-    Check Cashing Pay Day Lenders, Licensed by the Department of Financial Institutions, as of March, 2016</span>
-    </label></li><br>
-            
-            
-<li><label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="SmallLoans">
-  <input type="checkbox" id="SmallLoans" class="mdl-switch__input" onclick="bankData()">
-    <span class="mdl-switch__label">Small Loans provider, licensed by the Department of Financial Institutions, as of March, 2016</span>
-    </label></li><br>
-            
-<li><label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="auto-title">
-  <input type="checkbox" id="auto-title" class="mdl-switch__input" onclick="bankData()">
-    <span class="mdl-switch__label">Auto Title Lenders, as of April 2016</span>
-    </label></li>
-                        
-<li><label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="SecondMortgage">
-  <input type="checkbox" id="SecondMortgage" class="mdl-switch__input" onclick="bankData()">
-    <span class="mdl-switch__label">Second Mortgage Lenders, licensed by the Department of Financial Institutions, as of March 2016</span>
-    </label></li><br>
-            
-<li><label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="CSO">
-  <input type="checkbox" id="CSO" class="mdl-switch__input" onclick="bankData()">
-    <span class="mdl-switch__label">Credit Service Organizations, licensed by the Department of Financial Institutions, as of March 2016</span>
-    </label></li><br>
             
             
             
@@ -786,102 +739,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 <br>
 <br>
-    </section>
-    
-    <section class="mdl-layout__tab-panel" id="scroll-tab-2">
-      <div class="page-content">
-          
-<div class="SomeText-card-wide mdl-card mdl-shadow--2dp">
-  
-  
-</div>          
-
-<div class="SomeText-card-wide mdl-card mdl-shadow--2dp">
-     
-    </div>
-
-<div class="SomeText-card-wide mdl-card mdl-shadow--2dp">
-  
-  
-</div>      
-
-
-<br><br>
-
-          </div>
-    </section>
-    
-    
-    
-    
-    <section class="mdl-layout__tab-panel" id="scroll-tab-3">
-      <div class="page-content">
 
     
 
-
-
-
-
-
-
-<br><br>
-          </div>
-    </section>
-    <section class="mdl-layout__tab-panel" id="scroll-tab-4">
-      <div class="page-content">
-          
-          
-
-<br><br>  
-      </div>
-    </section>
-    <section class="mdl-layout__tab-panel" id="scroll-tab-5">
-      <div class="page-content">
-          
-
-
-
-
-<div class="SomeText-card-wide mdl-card mdl-shadow--2dp">
-  
-</div>    
-<br>
-<br>
-<br>
-      </div>
-    </section>
-    
-            <footer class="demo-footer mdl-mini-footer">
-          <div class="mdl-mini-footer--left-section">
-            <ul class="mdl-mini-footer--link-list">
-              <li><div id="google_translate_element"></div></li>
-              <script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.BOTTOM_LEFT}, 'google_translate_element');
-}
-</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<li></li>
-<li></li>
-<li></li>
-<li style="font-size:100%"><a href="www.ABLElaw.org" target="_blank">ABLE</a></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-
-        
-            </ul>
-          </div>
-        </footer>
-    
-    
-    
-    
-    
-    
-  </main>
-</div>
 
 
         
